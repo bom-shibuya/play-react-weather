@@ -34,7 +34,7 @@ describe('weatherList oparation test', () => {
     })
   })
 
-  test('If fetch is success, call expected actions', () => {
+  test('If fetch is failure, call expected actions', () => {
     axios.get = jest.fn(() => Promise.reject())
     const dispatch: AsyncDispatch = store.dispatch
     dispatch(fetchWeather(payload)).then(() => {
