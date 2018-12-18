@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reducer weatherList test shold return state tokyo include data 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+- Object {}
++ Object {
++   \\"Tokyo\\": Object {
++     \\"isError\\": false,
++     \\"isFetching\\": false,
++     \\"lastUpdateAt\\": 1502265600000,
++     \\"list\\": Array [
++       Object {
++         \\"test\\": \\"expected value\\",
++       },
++     ],
++   },
++ }"
+`;
+
+exports[`reducer weatherList test shold return state tokyo isError true 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+- Object {}
++ Object {
++   \\"Tokyo\\": Object {
++     \\"isError\\": true,
++     \\"isFetching\\": false,
++     \\"lastUpdateAt\\": null,
++     \\"list\\": Array [],
++   },
++ }"
+`;
+
+exports[`reducer weatherList test shold return state tokyo isFetching true 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+- Object {}
++ Object {
++   \\"Tokyo\\": Object {
++     \\"isError\\": false,
++     \\"isFetching\\": true,
++     \\"lastUpdateAt\\": null,
++     \\"list\\": Array [],
++   },
++ }"
+`;
+
+exports[`reducer weatherList test should return initial state 1`] = `
+"Snapshot Diff:
+Compared values have no visual difference."
+`;
+
+exports[`reducer weathers test shold return initial state 1`] = `
+"Snapshot Diff:
+Compared values have no visual difference."
+`;
+
+exports[`reducer weathers test shold return state tokyo include data 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+  Object {
+    \\"isError\\": false,
+    \\"isFetching\\": false,
+-   \\"lastUpdateAt\\": null,
+-   \\"list\\": Array [],
++   \\"lastUpdateAt\\": 1502265600000,
++   \\"list\\": Array [
++     Object {
++       \\"test\\": \\"expected value\\",
++     },
++   ],
+  }"
+`;
+
+exports[`reducer weathers test shold return state tokyo isError true 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+  Object {
+-   \\"isError\\": false,
++   \\"isError\\": true,
+    \\"isFetching\\": false,
+    \\"lastUpdateAt\\": null,
+    \\"list\\": Array [],
+  }"
+`;
+
+exports[`reducer weathers test shold return state tokyo isFetching true 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+  Object {
+    \\"isError\\": false,
+-   \\"isFetching\\": false,
++   \\"isFetching\\": true,
+    \\"lastUpdateAt\\": null,
+    \\"list\\": Array [],
+  }"
+`;

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`currentCity reducer test Reducer return initial state 1`] = `
+"Snapshot Diff:
+Compared values have no visual difference."
+`;
+
+exports[`currentCity reducer test Reducer return state currentCity => "Osaka" 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+  Object {
+-   \\"currentCity\\": \\"Tokyo\\",
++   \\"currentCity\\": \\"Osaka\\",
+  }"
+`;
