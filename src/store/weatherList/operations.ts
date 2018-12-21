@@ -16,6 +16,7 @@ export const fetchWeather: AsyncActionCreator = (payload: {
     .get(getRequestUrl(payload.city))
     .then(res => {
       const data = res.data as { list: WeatherList }
+
       dispatch(
         fetchSuccess({
           city: payload.city,

@@ -12,7 +12,7 @@ import {
 export type RootActions = CurrentCityAction | WeatherListAction
 export interface IRootState {
   currentCity: ICurrentCityState['currentCity']
-  weatherList: IWetherListState[]
+  weatherList: IWetherListState
 }
 
 export type AsyncDispatch = ThunkDispatch<IRootState, undefined, RootActions>

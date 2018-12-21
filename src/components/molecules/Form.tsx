@@ -3,17 +3,30 @@ import { Button, Input } from '../atoms'
 
 interface IProps {
   placeholder?: string
-  // buttonText: string
-  onSubmit?: (e: React.FormEvent) => void
+  buttonText: React.ReactNode
+  onSubmit: (text: string) => void
 }
+
+let input: React.RefObject<HTMLInputElement>
+input = React.createRef()
 
 export const Form: React.SFC<IProps> = ({
   placeholder,
-  // buttonText,
+  buttonText,
   onSubmit
-}) => (
-  <Form onSubmit={onSubmit}>
-    <Input placeholder={placeholder} />
-    <Button type="submit">SUBMIT</Button>
-  </Form>
-)
+}) => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (input && input.current && input.current.value !== '') {
+      onSubmit(input.current.value.trim())
+      input.current.value = ''
+    }
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <Input forwardRef={input} placeholder={placeholder} />
+      <Button type="submit">{buttonText}</Button>
+    </form>
+  )
+}

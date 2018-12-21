@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import './App.css'
 import logo from './logo.svg'
 
+import { Nav } from './containers'
+
 class App extends Component {
   public render() {
     return (
@@ -20,6 +22,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <Nav />
       </div>
     )
   }
