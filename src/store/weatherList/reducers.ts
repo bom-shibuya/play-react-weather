@@ -1,5 +1,5 @@
+import { WeatherList } from '../../types'
 import { Actions, FETCH_FAILURE, FETCH_REQUEST, FETCH_SUCCESS } from './actions'
-import { WeatherList } from './types'
 
 export const initialState = {
   isError: false,

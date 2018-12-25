@@ -1,6 +1,6 @@
 import snapshotDiff from 'snapshot-diff'
 import { fetchFailure, fetchRequest, fetchSuccess } from './actions'
-import { initialState, weatherList, weathers, WeathersState } from './reducers'
+import { initialState, weatherList, weathers } from './reducers'
 
 describe('reducer weathers test', () => {
   beforeEach(() => {

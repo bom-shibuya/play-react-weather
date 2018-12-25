@@ -1,4 +1,4 @@
-import { WeatherList } from './types'
+import { WeatherList } from '../../types'
 
 export const FETCH_REQUEST = 'FETCH_REQUEST'
 export const FETCH_SUCCESS = 'FETCH_SUCCESS'

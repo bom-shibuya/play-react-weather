@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { AsyncActionCreator } from '../../types'
+import { WeatherList } from '../../types'
 import { fetchFailure, fetchRequest, fetchSuccess } from './actions'
-import { WeatherList } from './types'
 
 const API_KEY = process.env.REACT_APP_API_KEY
 const END_POINT = 'https://api.openweathermap.org/data/2.5/forecast'
