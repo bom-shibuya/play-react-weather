@@ -10,12 +10,12 @@ interface IProps {
   dispatch: AsyncDispatch
 }
 
-const cityList = ['Tokyo', 'Osaka', 'Niigata']
+export const initialCityList = ['Tokyo', 'Osaka', 'Niigata']
 
 class DisplayDateContents extends React.Component<IProps> {
   public componentDidMount() {
     const { dispatch } = this.props
-    cityList.map(city =>
+    initialCityList.map(city =>
       dispatch(
         fetchWeather({
           city
@@ -29,7 +29,11 @@ class DisplayDateContents extends React.Component<IProps> {
   }
 }
 
-const mapStateToProps = (state: IRootState) => ({
+interface IOwnProps {
+  store?: unknown
+}
+
+const mapStateToProps = (state: IRootState, Ownprops: IOwnProps) => ({
   cityName: state.currentCity,
   weathersState: state.weatherList[state.currentCity]
 })
