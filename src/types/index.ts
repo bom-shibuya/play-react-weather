@@ -10,7 +10,7 @@ import {
 } from '../store/weatherList'
 
 export interface IWeatherItem {
-  dt_text: string
+  dt: string
   main: {
     grnd_level: number
     humidity: number
