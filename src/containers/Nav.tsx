@@ -17,7 +17,6 @@ const mapDispatchToProps = (dispatch: AsyncDispatch) => ({
   async onSubmit(city: string) {
     await dispatch(fetchWeather({ city }))
     dispatch(switchCity({ city }))
-    console.log(store.getState())
   }
 })
 
