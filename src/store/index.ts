@@ -5,7 +5,7 @@ import { weatherList } from './weatherList'
 
 const rootReducer = combineReducers({ currentCity, weatherList })
 const composeEnhancer =
-  (window as any).__REDUX__DEVTOOLS_EXTENSION_COMPOSE__ || compose
+  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk)))
 
