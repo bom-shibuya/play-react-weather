@@ -10,8 +10,6 @@ exports[`currentCity reducer test Reducer return state currentCity => "Osaka" 1`
 - First value
 + Second value
 
-  Object {
--   \\"currentCity\\": \\"Tokyo\\",
-+   \\"currentCity\\": \\"Osaka\\",
-  }"
+- Tokyo
++ Osaka"
 `;

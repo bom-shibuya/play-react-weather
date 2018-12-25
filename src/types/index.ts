@@ -2,7 +2,7 @@ import { ActionCreator } from 'redux'
 import { ThunkAction, ThunkDispatch } from 'redux-thunk'
 import {
   Actions as CurrentCityAction,
-  ICurrentCityState
+  CurrentCityState
 } from '../store/currentCity'
 import {
   Actions as WeatherListAction,
@@ -32,7 +32,7 @@ export type WeatherList = IWeatherItem[]
 
 export type RootActions = CurrentCityAction | WeatherListAction
 export interface IRootState {
-  currentCity: ICurrentCityState['currentCity']
+  currentCity: CurrentCityState
   weatherList: IWetherListState
 }
 
