@@ -1,6 +1,5 @@
 import axios from 'axios'
-import { AsyncActionCreator } from '../../types'
-import { WeatherList } from '../../types'
+import { AsyncActionCreator, WeatherList } from '../../types'
 import { fetchFailure, fetchRequest, fetchSuccess } from './actions'
 
 const API_KEY = process.env.REACT_APP_API_KEY
@@ -12,19 +11,18 @@ export const fetchWeather: AsyncActionCreator = (payload: {
   city: string
 }) => async dispatch => {
   dispatch(fetchRequest(payload))
-  return axios
-    .get(getRequestUrl(payload.city))
-    .then(res => {
+  return axios.get(getRequestUrl(payload.city)).then(
+    res => {
       const data = res.data as { list: WeatherList }
-
       dispatch(
         fetchSuccess({
           city: payload.city,
           data: data.list
         })
       )
-    })
-    .catch(_ => {
+    },
+    _ => {
       dispatch(fetchFailure(payload))
-    })
+    }
+  )
 }
