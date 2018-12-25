@@ -17,6 +17,9 @@ const mapDispatchToProps = (dispatch: AsyncDispatch) => ({
   async onSubmit(city: string) {
     await dispatch(fetchWeather({ city }))
     dispatch(switchCity({ city }))
+  },
+  onClick(city: string) {
+    dispatch(switchCity({ city }))
   }
 })
 

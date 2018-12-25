@@ -16,6 +16,7 @@ describe('Nav container test', () => {
   interface IProps {
     cityList: string[]
     onSubmit: (text: string) => void
+    onClick: (text: string) => void
   }
   let store: MockStoreEnhanced
   let wrapper: ShallowWrapper<IProps>
@@ -65,6 +66,18 @@ describe('Nav container test', () => {
       { type: FETCH_REQUEST, payload: { city } },
       { type: FETCH_FAILURE, payload: { city } },
       { type: SWITCH_CITY, payload: { city } }
+    ])
+  })
+
+  test('shold dispatch switch city action to call onClick', () => {
+    store.dispatch = jest.fn()
+    const city = 'Osaka'
+    wrapper.props().onClick(city)
+    expect(store.getActions()).toMatchObject([
+      {
+        payload: { city },
+        type: SWITCH_CITY
+      }
     ])
   })
 })

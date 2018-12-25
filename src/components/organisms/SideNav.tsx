@@ -4,13 +4,14 @@ import { Title } from '../atoms'
 import { CityList, Form } from '../molecules'
 interface IProps {
   onSubmit: (cityName: string) => void
+  onClick: (cityName: string) => void
   cityList: string[]
 }
 
-export const SideNav: React.SFC<IProps> = ({ onSubmit, cityList }) => (
+export const SideNav: React.SFC<IProps> = ({ onSubmit, onClick, cityList }) => (
   <div id="nav">
     <Title />
     <Form onSubmit={onSubmit} buttonText={'Search'} />
-    <CityList cityList={cityList} />
+    <CityList onClick={onClick} cityList={cityList} />
   </div>
 )
