@@ -27,7 +27,8 @@ export const weathers = (
     case FETCH_FAILURE:
       return {
         ...state,
-        isError: true
+        isError: true,
+        lastUpdateAt: Date.now()
       }
     default:
       return state

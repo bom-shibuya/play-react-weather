@@ -30,7 +30,7 @@ exports[`reducer weatherList test shold return state tokyo isError true 1`] = `
 +   \\"Tokyo\\": Object {
 +     \\"isError\\": true,
 +     \\"isFetching\\": false,
-+     \\"lastUpdateAt\\": null,
++     \\"lastUpdateAt\\": 1502265600000,
 +     \\"list\\": Array [],
 +   },
 + }"
@@ -90,7 +90,8 @@ exports[`reducer weathers test shold return state tokyo isError true 1`] = `
 -   \\"isError\\": false,
 +   \\"isError\\": true,
     \\"isFetching\\": false,
-    \\"lastUpdateAt\\": null,
+-   \\"lastUpdateAt\\": null,
++   \\"lastUpdateAt\\": 1502265600000,
     \\"list\\": Array [],
   }"
 `;
