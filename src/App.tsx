@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import logo from './logo.svg'
 
-import { Nav } from './containers'
+import { DisplayData, Nav } from './containers'
 
 class App extends Component {
   public render() {
@@ -23,6 +23,7 @@ class App extends Component {
           </a>
         </header>
         <Nav />
+        <DisplayData />
       </div>
     )
   }
