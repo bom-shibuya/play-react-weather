@@ -13,13 +13,15 @@ interface IProps {
 export const initialCityList = ['Tokyo', 'Osaka', 'Niigata']
 
 class DisplayDateContents extends React.Component<IProps> {
-  public componentDidMount() {
+  public componentDidMount(): Promise<void[]> {
     const { dispatch } = this.props
-    initialCityList.map(city =>
-      dispatch(
-        fetchWeather({
-          city
-        })
+    return Promise.all(
+      initialCityList.map(city =>
+        dispatch(
+          fetchWeather({
+            city
+          })
+        )
       )
     )
   }
