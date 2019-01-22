@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DisplayDataContents component test component did mount should called dispatch with expected arguments 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "city": "Tokyo",
+    },
+    "type": "FETCH_REQUEST",
+  },
+  Object {
+    "payload": Object {
+      "city": "Osaka",
+    },
+    "type": "FETCH_REQUEST",
+  },
+  Object {
+    "payload": Object {
+      "city": "Niigata",
+    },
+    "type": "FETCH_REQUEST",
+  },
+  Object {
+    "payload": Object {
+      "city": "Tokyo",
+      "data": Array [],
+    },
+    "type": "FETCH_SUCCESS",
+  },
+  Object {
+    "payload": Object {
+      "city": "Osaka",
+      "data": Array [],
+    },
+    "type": "FETCH_SUCCESS",
+  },
+  Object {
+    "payload": Object {
+      "city": "Niigata",
+      "data": Array [],
+    },
+    "type": "FETCH_SUCCESS",
+  },
+]
+`;
