@@ -8,10 +8,26 @@ interface IProps {
   cityList: string[]
 }
 
+const StyledSideNav = styled.div`
+  padding: 2.4rem 1.6rem;
+`
+
+const SiteTitle = styled.div`
+  margin-bottom: 1.2rem;
+`
+
+const SearchForm = styled.div`
+  margin-bottom: 2.4rem;
+`
+
 export const SideNav: React.SFC<IProps> = ({ onSubmit, onClick, cityList }) => (
-  <div id="nav">
-    <Title />
-    <Form onSubmit={onSubmit} buttonText={'Search'} />
+  <StyledSideNav id="nav">
+    <SiteTitle>
+      <Title />
+    </SiteTitle>
+    <SearchForm>
+      <Form onSubmit={onSubmit} buttonText={'Search'} />
+    </SearchForm>
     <CityList onClick={onClick} cityList={cityList} />
-  </div>
+  </StyledSideNav>
 )

@@ -2,11 +2,19 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import App from './App'
-import './index.css'
+import WebFont from 'webfontloader'
+import { App } from './App'
 import * as serviceWorker from './serviceWorker'
 import store from './store'
 import { GlobalStyles, theme } from './styles'
+
+const webfontConfig = {
+  google: {
+    families: ['Noto Sans JP', 'Roboto']
+  }
+}
+
+WebFont.load(webfontConfig)
 
 ReactDOM.render(
   <Provider store={store}>

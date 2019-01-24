@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 62.5%;
   }
   body {
-    font-family: ${({ theme }) => theme.font.family.base}
+    font-family: ${({ theme }) => theme.font.family.base};
     font-size: ${({ theme }) => theme.font.size.normal}
   }
 ` as GlobalStyleComponent<ThemeProps<Theme>, Theme>

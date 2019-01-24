@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Button, Input } from '../atoms'
 
 interface IProps {
@@ -6,6 +7,16 @@ interface IProps {
   buttonText: React.ReactNode
   onSubmit: (text: string) => void
 }
+
+const CityNameForm = styled.form`
+  display: flex;
+`
+
+const CityNameInput = styled.div`
+  margin-right: 0.6rem;
+`
+
+const CityNameFormButton = styled.div``
 
 let input: React.RefObject<HTMLInputElement>
 input = React.createRef()
@@ -24,9 +35,13 @@ export const Form: React.SFC<IProps> = ({
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Input forwardRef={input} placeholder={placeholder} />
-      <Button type="submit">{buttonText}</Button>
-    </form>
+    <CityNameForm onSubmit={handleSubmit}>
+      <CityNameInput>
+        <Input forwardRef={input} placeholder={placeholder} />
+      </CityNameInput>
+      <CityNameFormButton>
+        <Button type="submit">{buttonText}</Button>
+      </CityNameFormButton>
+    </CityNameForm>
   )
 }

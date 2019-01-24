@@ -13,6 +13,7 @@
     "@types/react-router-dom": "^4.3.1",
     "@types/redux-thunk": "^2.1.0",
     "@types/styled-components": "^4.1.4",
+    "@types/webfontloader": "^1.6.29",
     "axios": "^0.18.0",
     "dotenv": "^6.2.0",
     "normalizr": "^3.3.0",
@@ -25,7 +26,8 @@
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.1.2",
     "styled-reset": "^1.6.2",
-    "typescript": "^3.2.2"
+    "typescript": "^3.2.2",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",

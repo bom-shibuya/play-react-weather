@@ -3,7 +3,7 @@ const font = {
     base: '#000'
   },
   family: {
-    base: "Roboto, 'Noto Sans JP', sans-serif"
+    base: 'Roboto, "Noto Sans JP", sans-serif'
   },
   size: {
     head: '4rem',
