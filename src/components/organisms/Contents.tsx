@@ -1,4 +1,13 @@
 import React from 'react'
+import {
+  CartesianGrid,
+  Legend,
+  Line,
+  LineChart,
+  Tooltip,
+  XAxis,
+  YAxis
+} from 'recharts'
 import styled from 'styled-components'
 import { WeathersState } from '../../store/weatherList'
 
@@ -17,7 +26,16 @@ interface IProps {
   weathersState: WeathersState
 }
 
-const kelvinToC = (n: number) => n - 273.15
+const kelvinToC = (kelvin: number) => Math.floor(kelvin - 273.15)
+const formatDate = (time: number) =>
+  new Date(time).toLocaleDateString('ja-JP', {
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    month: 'long'
+    // weekday: 'long',
+    // year: 'numeric'
+  })
 
 export const Contents: React.SFC<IProps> = ({ cityName, weathersState }) => {
   console.log(weathersState)
@@ -30,35 +48,46 @@ export const Contents: React.SFC<IProps> = ({ cityName, weathersState }) => {
     return <StyledContents>Error!! Please confirm your types...</StyledContents>
   }
 
+  interface IChartData {
+    current: number
+    max: number
+    min: number
+    name: string
+    weather: string
+  }
+
+  const chartData: IChartData[] = weathersState.list.map(data => ({
+    current: kelvinToC(data.main.temp),
+    max: kelvinToC(data.main.temp_max),
+    min: kelvinToC(data.main.temp_min),
+    name: formatDate(+data.dt * 1000),
+    weather: data.weather[0].main
+  }))
+
   return (
     <StyledContents>
       <ContentsTitle>{cityName} data!!!</ContentsTitle>
       <LastUpdate>last update: {weathersState.lastUpdateAt}</LastUpdate>
-      {weathersState.list.map(data => (
-        <div key={data.dt}>
-          <time>
-            {new Date(+data.dt * 1000).toLocaleDateString('ja-JP', {
-              day: 'numeric',
-              hour: 'numeric',
-              minute: 'numeric',
-              month: 'long'
-              // weekday: 'long',
-              // year: 'numeric'
-            })}
-          </time>
-          <h3>Weather</h3>
-          <div>{data.weather[0].main}</div>
-          <h3>Temparature</h3>
-          <dl>
-            <dt>current</dt>
-            <dd>{kelvinToC(data.main.temp)}</dd>
-            <dt>max</dt>
-            <dd>{kelvinToC(data.main.temp_max)}</dd>
-            <dt>min</dt>
-            <dd>{kelvinToC(data.main.temp_min)}</dd>
-          </dl>
-        </div>
-      ))}
+      <LineChart
+        width={1200}
+        height={300}
+        data={chartData}
+        margin={{ top: 5, bottom: 5 }}
+      >
+        <XAxis dataKey="name" />
+        <YAxis unit="℃" />
+        <CartesianGrid strokeDasharray="3 3" />
+        <Tooltip label={'test'} />
+        <Legend />
+        <Line
+          type="monotone"
+          dataKey="current"
+          stroke="#8884d8"
+          // activeDot={{ r: 10 }}
+        />
+        <Line type="monotone" dataKey="max" stroke="#82ca9d" />
+        <Line type="monotone" dataKey="min" stroke="#cccb44" />
+      </LineChart>
     </StyledContents>
   )
 }
